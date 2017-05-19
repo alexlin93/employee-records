@@ -1,0 +1,64 @@
+@model MvcRecords.Models.Record
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div>
+        <h4>Employee Record</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-error"></div>
+    <input type="hidden" asp-for="ID" />
+        <div>
+            <label asp-for="Name"></label>
+            <div>
+                <input asp-for="Name" type="text">
+                <span asp-validation-for="Name" class="text-error"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="Email"></label>
+            <div>
+                <input asp-for="Email" type="text">
+                <span asp-validation-for="Email" class="text-error"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="Phone"></label>
+            <div>
+                <input asp-for="Phone" type="text">
+                <span asp-validation-for="Phone" class="text-error"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="DateofBirth"></label>
+            <div>
+                <input asp-for="DateofBirth" type="text">
+                <span asp-validation-for="DateofBirth" class="text-error"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="Address"></label>
+            <div>
+                <input asp-for="Address" type="text">
+                <span asp-validation-for="Address" class="text-error"></span>
+            </div>
+        </div>
+        <div>
+            <div>
+                <input type="submit" value="Save">
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
