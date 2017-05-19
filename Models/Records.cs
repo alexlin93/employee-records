@@ -8,23 +8,20 @@ namespace MvcRecords.Models
         public int ID { get; set; }
 
         [StringLength(60, MinimumLength = 3)]
-        [Required(ErrorMessage = "The email address is required")]
+        [Required(ErrorMessage = "A name is required.")]
         public string Name { get; set; }
 
-        [StringLength(60, MinimumLength = 3)]
-        [Required(ErrorMessage = "The email address is required")]
+        [EmailAddress]
         public string Email { get; set; }
 
-        [Display(Name = "Phone")]
-        [DataType(DataType.PhoneNumber)]
+        [PhoneAttribute]
         public string Phone { get; set; }
 
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
         public DateTime DateofBirth { get; set; }
 
-        [Display(Name = "Address")]
-        [Required(ErrorMessage = "The email address is required")]
+        [Required(ErrorMessage = "An address is required.")]
         public string Address { get; set; }
     }
 }
